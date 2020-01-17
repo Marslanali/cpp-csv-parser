@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arslan/CLionProjects/reading-csv-cpp/main.cpp
+string
+-
+iostream
+-
+armadillo
+-
+stdio.h
+-
+fstream
+-
+vector
+-
+iterator
+-
+algorithm
+-
+boost/algorithm/string.hpp
+-
+
