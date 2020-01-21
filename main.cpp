@@ -1,4 +1,12 @@
 // Created by arslan on 3/12/19.
+
+/**
+ * Reading and Writing CSV file in C++
+ * Generate random matrix using C++ Armadillo library
+ * and save in CSV file.
+ */
+
+
 #include <string>
 #include <iostream>
 #include <armadillo>
