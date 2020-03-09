@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2019.2.4/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /opt/clion-2019.3.4/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -E remove -f
+RM = /opt/clion-2019.3.4/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/arslan/CLionProjects/reading-csv-cpp
+CMAKE_SOURCE_DIR = /home/arslanali/CLionProjects/reading-csv-cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/arslan/CLionProjects/reading-csv-cpp/build
+CMAKE_BINARY_DIR = /home/arslanali/CLionProjects/reading-csv-cpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/arslan/CLionProjects/reading-csv-cpp/build
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/clion-2019.3.4/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/opt/clion-2019.3.4/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arslan/CLionProjects/reading-csv-cpp/build/CMakeFiles /home/arslan/CLionProjects/reading-csv-cpp/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arslanali/CLionProjects/reading-csv-cpp/build/CMakeFiles /home/arslanali/CLionProjects/reading-csv-cpp/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arslan/CLionProjects/reading-csv-cpp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arslanali/CLionProjects/reading-csv-cpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,114 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named reading-csv-cpp
+# Target rules for targets named testcsv-example1
 
 # Build rule for target.
-reading-csv-cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 reading-csv-cpp
-.PHONY : reading-csv-cpp
+testcsv-example1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testcsv-example1
+.PHONY : testcsv-example1
 
 # fast build rule for target.
-reading-csv-cpp/fast:
-	$(MAKE) -f CMakeFiles/reading-csv-cpp.dir/build.make CMakeFiles/reading-csv-cpp.dir/build
-.PHONY : reading-csv-cpp/fast
+testcsv-example1/fast:
+	$(MAKE) -f CMakeFiles/testcsv-example1.dir/build.make CMakeFiles/testcsv-example1.dir/build
+.PHONY : testcsv-example1/fast
 
-main.o: main.cpp.o
+#=============================================================================
+# Target rules for targets named testcsv-example2
 
-.PHONY : main.o
+# Build rule for target.
+testcsv-example2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testcsv-example2
+.PHONY : testcsv-example2
+
+# fast build rule for target.
+testcsv-example2/fast:
+	$(MAKE) -f CMakeFiles/testcsv-example2.dir/build.make CMakeFiles/testcsv-example2.dir/build
+.PHONY : testcsv-example2/fast
+
+examples/testcsv-example1.o: examples/testcsv-example1.cpp.o
+
+.PHONY : examples/testcsv-example1.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/reading-csv-cpp.dir/build.make CMakeFiles/reading-csv-cpp.dir/main.cpp.o
-.PHONY : main.cpp.o
+examples/testcsv-example1.cpp.o:
+	$(MAKE) -f CMakeFiles/testcsv-example1.dir/build.make CMakeFiles/testcsv-example1.dir/examples/testcsv-example1.cpp.o
+.PHONY : examples/testcsv-example1.cpp.o
 
-main.i: main.cpp.i
+examples/testcsv-example1.i: examples/testcsv-example1.cpp.i
 
-.PHONY : main.i
+.PHONY : examples/testcsv-example1.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/reading-csv-cpp.dir/build.make CMakeFiles/reading-csv-cpp.dir/main.cpp.i
-.PHONY : main.cpp.i
+examples/testcsv-example1.cpp.i:
+	$(MAKE) -f CMakeFiles/testcsv-example1.dir/build.make CMakeFiles/testcsv-example1.dir/examples/testcsv-example1.cpp.i
+.PHONY : examples/testcsv-example1.cpp.i
 
-main.s: main.cpp.s
+examples/testcsv-example1.s: examples/testcsv-example1.cpp.s
 
-.PHONY : main.s
+.PHONY : examples/testcsv-example1.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/reading-csv-cpp.dir/build.make CMakeFiles/reading-csv-cpp.dir/main.cpp.s
-.PHONY : main.cpp.s
+examples/testcsv-example1.cpp.s:
+	$(MAKE) -f CMakeFiles/testcsv-example1.dir/build.make CMakeFiles/testcsv-example1.dir/examples/testcsv-example1.cpp.s
+.PHONY : examples/testcsv-example1.cpp.s
+
+examples/testcsv-example2.o: examples/testcsv-example2.cpp.o
+
+.PHONY : examples/testcsv-example2.o
+
+# target to build an object file
+examples/testcsv-example2.cpp.o:
+	$(MAKE) -f CMakeFiles/testcsv-example2.dir/build.make CMakeFiles/testcsv-example2.dir/examples/testcsv-example2.cpp.o
+.PHONY : examples/testcsv-example2.cpp.o
+
+examples/testcsv-example2.i: examples/testcsv-example2.cpp.i
+
+.PHONY : examples/testcsv-example2.i
+
+# target to preprocess a source file
+examples/testcsv-example2.cpp.i:
+	$(MAKE) -f CMakeFiles/testcsv-example2.dir/build.make CMakeFiles/testcsv-example2.dir/examples/testcsv-example2.cpp.i
+.PHONY : examples/testcsv-example2.cpp.i
+
+examples/testcsv-example2.s: examples/testcsv-example2.cpp.s
+
+.PHONY : examples/testcsv-example2.s
+
+# target to generate assembly for a file
+examples/testcsv-example2.cpp.s:
+	$(MAKE) -f CMakeFiles/testcsv-example2.dir/build.make CMakeFiles/testcsv-example2.dir/examples/testcsv-example2.cpp.s
+.PHONY : examples/testcsv-example2.cpp.s
+
+src/testcsvclass.o: src/testcsvclass.cpp.o
+
+.PHONY : src/testcsvclass.o
+
+# target to build an object file
+src/testcsvclass.cpp.o:
+	$(MAKE) -f CMakeFiles/testcsv-example1.dir/build.make CMakeFiles/testcsv-example1.dir/src/testcsvclass.cpp.o
+	$(MAKE) -f CMakeFiles/testcsv-example2.dir/build.make CMakeFiles/testcsv-example2.dir/src/testcsvclass.cpp.o
+.PHONY : src/testcsvclass.cpp.o
+
+src/testcsvclass.i: src/testcsvclass.cpp.i
+
+.PHONY : src/testcsvclass.i
+
+# target to preprocess a source file
+src/testcsvclass.cpp.i:
+	$(MAKE) -f CMakeFiles/testcsv-example1.dir/build.make CMakeFiles/testcsv-example1.dir/src/testcsvclass.cpp.i
+	$(MAKE) -f CMakeFiles/testcsv-example2.dir/build.make CMakeFiles/testcsv-example2.dir/src/testcsvclass.cpp.i
+.PHONY : src/testcsvclass.cpp.i
+
+src/testcsvclass.s: src/testcsvclass.cpp.s
+
+.PHONY : src/testcsvclass.s
+
+# target to generate assembly for a file
+src/testcsvclass.cpp.s:
+	$(MAKE) -f CMakeFiles/testcsv-example1.dir/build.make CMakeFiles/testcsv-example1.dir/src/testcsvclass.cpp.s
+	$(MAKE) -f CMakeFiles/testcsv-example2.dir/build.make CMakeFiles/testcsv-example2.dir/src/testcsvclass.cpp.s
+.PHONY : src/testcsvclass.cpp.s
 
 # Help Target
 help:
@@ -157,11 +227,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... reading-csv-cpp"
 	@echo "... edit_cache"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... testcsv-example1"
+	@echo "... testcsv-example2"
+	@echo "... examples/testcsv-example1.o"
+	@echo "... examples/testcsv-example1.i"
+	@echo "... examples/testcsv-example1.s"
+	@echo "... examples/testcsv-example2.o"
+	@echo "... examples/testcsv-example2.i"
+	@echo "... examples/testcsv-example2.s"
+	@echo "... src/testcsvclass.o"
+	@echo "... src/testcsvclass.i"
+	@echo "... src/testcsvclass.s"
 .PHONY : help
 
 

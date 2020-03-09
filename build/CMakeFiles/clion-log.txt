@@ -1,4 +1,4 @@
-/opt/clion-2019.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/arslan/CLionProjects/reading-csv-cpp
+/opt/clion-2019.3.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/arslanali/CLionProjects/reading-csv-cpp
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/arslan/CLionProjects/reading-csv-cpp/build
+-- Build files have been written to: /home/arslanali/CLionProjects/reading-csv-cpp/build

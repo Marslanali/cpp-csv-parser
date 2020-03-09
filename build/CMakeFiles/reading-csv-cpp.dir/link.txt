@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/reading-csv-cpp.dir/main.cpp.o  -o reading-csv-cpp /usr/lib/x86_64-linux-gnu/libarmadillo.so 

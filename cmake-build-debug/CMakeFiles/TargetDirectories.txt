@@ -1,3 +1,0 @@
-/home/arslan/CLionProjects/reading-csv-cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/arslan/CLionProjects/reading-csv-cpp/cmake-build-debug/CMakeFiles/reading-csv-cpp.dir
-/home/arslan/CLionProjects/reading-csv-cpp/cmake-build-debug/CMakeFiles/edit_cache.dir

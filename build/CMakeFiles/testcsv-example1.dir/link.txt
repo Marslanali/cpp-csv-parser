@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -pthread  -g   CMakeFiles/testcsv-example1.dir/examples/testcsv-example1.cpp.o CMakeFiles/testcsv-example1.dir/src/testcsvclass.cpp.o  -o testcsv-example1 /usr/lib/x86_64-linux-gnu/libarmadillo.so 
