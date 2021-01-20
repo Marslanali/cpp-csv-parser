@@ -1,15 +1,23 @@
 /**
- * @brief  This file is part of csvparser, a C++ parser for CSV files read and write.
- * @file  testcsv-example.cpp
+ * @brief  This file is part of csv_parser, a C++ parser for CSV files read and
+ * write.
+ * @file  test_csv_parser.cpp
  * @date  9/3/2020 -- Revised 16/01/2021
  * @copyright
  * @author  Arslan Ali  <marslanali800@gmail.com>
  */
 
-#include <testcsvclass.h>
+#include <test_csv_parser>
 
-int main(int argc, char **argv) {
-  int row_in, col_in, dim_in = 0;
+/**
+ * main function
+ * @param argc  Total number of command line arguments
+ * @param argv  Pointer to store command line arguments
+ * @return
+ */
+int32_t main(int32_t argc, char **argv)
+{
+  int32_t row_in, col_in, dim_in = 0;
   std::cout << "\n Enter number of rows, cols and dimen for input" << std::endl;
 
   std::cin >> row_in;
@@ -23,7 +31,8 @@ int main(int argc, char **argv) {
   std::string finalName;
   name = "testData";
 
-  for (int i = 0; i < dim_in; i++) {
+  for (size_t i = 0; i < dim_in; i++)
+  {
     // file pointer
     std::fstream fout;
     dimen = std::to_string(i) + ".csv";
@@ -35,8 +44,10 @@ int main(int argc, char **argv) {
 
     //	std::cout << "Matrix No: " << i << " \n" << data1.slice(i) << std::endl;
 
-    for (int j = 0; j < arma::size(data, 0); j++) {
-      for (int k = 0; k < arma::size(data, 1); k++) {
+    for (size_t j = 0; j < arma::size(data, 0); j++)
+    {
+      for (size_t k = 0; k < arma::size(data, 1); k++)
+      {
         arma::Mat<double> temp1 = data.slice(i);
         fout << temp1(j, i) << ", ";
       }
@@ -49,7 +60,7 @@ int main(int argc, char **argv) {
 
   std::cout << "\n Enter number of rows, cols and dimen for search list \n" << std::endl;
 
-  int rows, cols, dimension;
+  int32_t rows, cols, dimension;
   std::string fileDimension;
   std::string fileName;
   std::string outputFileName;
@@ -63,14 +74,14 @@ int main(int argc, char **argv) {
   outputFileName = fileName + fileDimension;
 
   // Creating an object of CSVWriter
-  CSVReader reader(outputFileName);
+  CsvParser reader(outputFileName);
 
   // Get the data from CSV File
-  std::vector<std::vector<std::string>> dataList = reader.getData();
+  std::vector<std::vector<std::string>> data_list = reader.get_data();
 
   // Print the content by search list
   std::vector<std::string> temp;
-  temp = dataList[rows];
+  temp = data_list[rows];
   std::cout << "return value: " << temp[cols] << std::endl;
 
   return 0;

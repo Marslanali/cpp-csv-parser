@@ -1,35 +1,64 @@
+############################################################
+# Find CMake, Compiler Version, and OS
+############################################################
 cmake_minimum_required(VERSION 3.15)
-project(reading-csv-cpp)
+project(csv_parser VERSION 1.0.1 DESCRIPTION "csv_parser description")
+set(CMAKE_CXX_STANDARD 20)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread ")
+message(STATUS "CMake version   : " ${CMAKE_SYSTEM_VERSION})
+message(STATUS "Compiler        : " ${CMAKE_CXX_COMPILER})
+message(STATUS "Operating System: " ${CMAKE_SYSTEM})
+message(STATUS "SYSTEM PROCESSOR: " ${CMAKE_SYSTEM_PROCESSOR})
 
-add_executable(testcsv-example1
-        ${PROJECT_SOURCE_DIR}/examples/testcsv-example1.cpp
-        ${PROJECT_SOURCE_DIR}/src/testcsvclass.cpp
-        ${PROJECT_SOURCE_DIR}/include/testcsvclass.h )
+############################################################
+# Create a library csv_parser_library  [.so]
+############################################################
+#Generate the shared library from the library sources
+add_library(csv_parser_library SHARED
+        ${PROJECT_SOURCE_DIR}/src/csv_parser.cpp
+        )
+add_library(csv_parser::library ALIAS csv_parser_library)
 
-add_executable(testcsv-example2
-        ${PROJECT_SOURCE_DIR}/examples/testcsv-example2.cpp
-        ${PROJECT_SOURCE_DIR}/src/testcsvclass.cpp
-        ${PROJECT_SOURCE_DIR}/include/testcsvclass.h )
-#
-#add_executable(testcsv-example3
-#        ${PROJECT_SOURCE_DIR}/examples/testcsv-example3.cpp
-#        )
 
-## Armadillo & OpenCV packages
-#find_package(OpenCV 4.2 REQUIRED)
-find_package(Armadillo 5.2.0 REQUIRED)
+target_include_directories(csv_parser_library
+        PUBLIC
+        ${PROJECT_SOURCE_DIR}/include
+        )
 
-#find opencv & armadillo libraries
-find_library(ARMADILLO_LIBRARIES armadillo)
+############################################################
+#  Create a executable for cpp-cpu-usage
+############################################################
+# Add an executable with the above sources
+add_executable(csv_parser_binary
+        ${PROJECT_SOURCE_DIR}/test/csv_parser_test1.cpp
+        )
 
-#target includes
-include_directories(include ${PYTHON_INCLUDE_DIRS} ${ARMADILLO_INCLUDE_DIRS} )
+############################################################
+# Target Link Libaries
+############################################################
+# link the csv_parser_library target with the cpp-cpu-usage target
+target_link_libraries(csv_parser_binary
+        PRIVATE
+        csv_parser::library
+        )
 
-#target link libraries
-target_link_libraries(testcsv-example1 ${PYTHON_LIBRARIES}  ${ARMADILLO_LIBRARIES} )
+############################################################
+# Install
+############################################################
 
-#target link libraries
-target_link_libraries(testcsv-example2 ${PYTHON_LIBRARIES}  ${ARMADILLO_LIBRARIES} )
+# Binaries
+install(TARGETS csv_parser_binary
+        DESTINATION bin)
+
+# Library
+# Note: may not work on windows
+install(TARGETS csv_parser_library
+        LIBRARY DESTINATION lib)
+
+# Header files
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/
+        DESTINATION include)
+
+# Config
+install(FILES csv_parser.conf
+        DESTINATION etc)

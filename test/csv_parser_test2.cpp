@@ -16,22 +16,22 @@ int main(int argc, char **argv) {
   std::cout << "\n Enter number of rows, cols and dimen for search list \n" << std::endl;
 
   int rows, cols;
-  std::string filePath;
+  std::string file_path;
 
   std::cin >> rows;
   std::cin >> cols;
   std::cout << "\n";
-  filePath = "/home/arslanali/CLionProjects/reading-csv-cpp/build/testData0.csv";
+  file_path = "/home/arslanali/CLionProjects/reading-csv-cpp/build/testData0.csv";
 
   // Creating an object of CSVWriter
-  CSVReader reader(filePath);
+  CsvParser reader(file_path);
 
   // Get the data from CSV File
-  std::vector<std::vector<std::string>> dataList = reader.getData();
+  std::vector<std::vector<std::string>> data_list = reader.get_data();
 
   // Print the content by search list
   std::vector<std::string> temp;
-  temp = dataList[rows];
+  temp = data_list[rows];
   std::cout << "return value: " << temp[cols] << std::endl;
 
   return 0;
