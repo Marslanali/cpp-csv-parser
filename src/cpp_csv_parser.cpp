@@ -1,14 +1,16 @@
 /**
  * @brief  This file is part of csv_parser, a C++ parser for CSV files read and
  * write.
- * @file  csv_parser.cpp
- * @date  9/3/2020 -- Revised 16/01/2021
+ * @file  cpp_csv_parser.cpp
+ * @date  9/3/2020 -- Revised 20/01/2021
  * @copyright
  * @author  Arslan Ali  <marslanali800@gmail.com>
  */
 
-#include "../include/shared/csv_parser.h"
+#include "../include/shared/cpp_csv_parser.h"
 
+namespace csv_parser
+{
 /**
  * @brief get_data method
  * @return  std::vector<std::vector<std::string>>
@@ -39,3 +41,4 @@ std::vector<std::vector<std::string>> CsvParser::get_data()
     return data_list;
   }
 }
+}  // namespace csv_parser

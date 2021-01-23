@@ -1,8 +1,8 @@
 /**
  * @brief  This file is part of csv_parser, a C++ parser for CSV files read and
  * write.
- * @file  csv_parser.h
- * @date  9/3/2020 -- Revised 16/01/2021
+ * @file  cpp_csv_parser.h
+ * @date  9/3/2020 -- Revised 20/01/2021
  * @copyright
  * @author  Arslan Ali  <marslanali800@gmail.com>
  */
@@ -19,6 +19,8 @@
 #include <string>
 #include <vector>
 
+namespace csv_parser
+{
 class CsvParser
 {
   std::string _file_path;
@@ -31,4 +33,5 @@ class CsvParser
   std::vector<std::vector<std::string>> get_data();
 };
 
+}  // namespace csv_parser
 #endif  // READING_CSV_CPP_TESTCSVCLASS_H
