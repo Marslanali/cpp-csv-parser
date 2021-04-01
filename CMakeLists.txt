@@ -34,7 +34,7 @@ target_include_directories(csv_parser_library
 install(TARGETS csv_parser_library
         LIBRARY DESTINATION lib)
 
-# Header files
+# Header filesd
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/
         DESTINATION include)
 
@@ -58,7 +58,7 @@ find_library(CSV_PARSER_LIBRARY csv_parser_library)
 ############################################################
 # Add an executable with the above sources
 add_executable(csv_parser_test1_binary
-        ${PROJECT_SOURCE_DIR}/examples/csv_parser_test.cpp)
+        ${PROJECT_SOURCE_DIR}/tests/csv_parser_test.cpp)
 
 ############################################################
 # Target Include Directories
