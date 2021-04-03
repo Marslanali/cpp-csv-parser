@@ -224,9 +224,6 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Path to a library.
-CSV_PARSER_LIBRARY:FILEPATH=CSV_PARSER_LIBRARY-NOTFOUND
-
 //Value Computed by CMake
 cpp_csv_parser_BINARY_DIR:STATIC=/home/arslan/arslan/github/cpp-csv-parser/build
 

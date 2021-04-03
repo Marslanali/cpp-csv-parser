@@ -76,52 +76,6 @@ CMAKE_BINARY_DIR = /home/arslan/arslan/github/cpp-csv-parser/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/local/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -189,26 +143,13 @@ csv_parser_test1_binary/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/csv_parser_test1_binary.dir/build.make CMakeFiles/csv_parser_test1_binary.dir/build
 .PHONY : csv_parser_test1_binary/fast
 
-#=============================================================================
-# Target rules for targets named csv_parser_library
-
-# Build rule for target.
-csv_parser_library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 csv_parser_library
-.PHONY : csv_parser_library
-
-# fast build rule for target.
-csv_parser_library/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/csv_parser_library.dir/build.make CMakeFiles/csv_parser_library.dir/build
-.PHONY : csv_parser_library/fast
-
 src/cpp_csv_parser.o: src/cpp_csv_parser.cpp.o
 
 .PHONY : src/cpp_csv_parser.o
 
 # target to build an object file
 src/cpp_csv_parser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/csv_parser_library.dir/build.make CMakeFiles/csv_parser_library.dir/src/cpp_csv_parser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/csv_parser_test1_binary.dir/build.make CMakeFiles/csv_parser_test1_binary.dir/src/cpp_csv_parser.cpp.o
 .PHONY : src/cpp_csv_parser.cpp.o
 
 src/cpp_csv_parser.i: src/cpp_csv_parser.cpp.i
@@ -217,7 +158,7 @@ src/cpp_csv_parser.i: src/cpp_csv_parser.cpp.i
 
 # target to preprocess a source file
 src/cpp_csv_parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/csv_parser_library.dir/build.make CMakeFiles/csv_parser_library.dir/src/cpp_csv_parser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/csv_parser_test1_binary.dir/build.make CMakeFiles/csv_parser_test1_binary.dir/src/cpp_csv_parser.cpp.i
 .PHONY : src/cpp_csv_parser.cpp.i
 
 src/cpp_csv_parser.s: src/cpp_csv_parser.cpp.s
@@ -226,7 +167,7 @@ src/cpp_csv_parser.s: src/cpp_csv_parser.cpp.s
 
 # target to generate assembly for a file
 src/cpp_csv_parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/csv_parser_library.dir/build.make CMakeFiles/csv_parser_library.dir/src/cpp_csv_parser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/csv_parser_test1_binary.dir/build.make CMakeFiles/csv_parser_test1_binary.dir/src/cpp_csv_parser.cpp.s
 .PHONY : src/cpp_csv_parser.cpp.s
 
 tests/csv_parser_test.o: tests/csv_parser_test.cpp.o
@@ -263,12 +204,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... csv_parser_library"
 	@echo "... csv_parser_test1_binary"
 	@echo "... src/cpp_csv_parser.o"
 	@echo "... src/cpp_csv_parser.i"

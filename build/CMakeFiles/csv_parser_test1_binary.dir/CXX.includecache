@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arslan/arslan/github/cpp-csv-parser/include/shared/cpp_csv_parser.h
+algorithm
+-
+boost/algorithm/string.hpp
+-
+fstream
+-
+iostream
+-
+iterator
+-
+string
+-
+vector
+-
+
+/home/arslan/arslan/github/cpp-csv-parser/src/cpp_csv_parser.cpp
+../include/shared/cpp_csv_parser.h
+/home/arslan/arslan/github/cpp-csv-parser/include/shared/cpp_csv_parser.h
+
+/home/arslan/arslan/github/cpp-csv-parser/tests/csv_parser_test.cpp
+fstream
+-
+iostream
+-
+string
+-
+vector
+-
+/home/arslan/arslan/github/cpp-csv-parser/include/shared/cpp_csv_parser.h
+-
+

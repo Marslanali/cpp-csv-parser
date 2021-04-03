@@ -6,5 +6,5 @@ CXX_FLAGS = -O3 -DNDEBUG   -std=gnu++2a
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/arslan/arslan/github/cpp-csv-parser/include 
+CXX_INCLUDES = 
 
